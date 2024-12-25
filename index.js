@@ -29,7 +29,6 @@ search.addEventListener("click", () => {
         return;
       }
 
-      // Process valid response
       const image = document.querySelector(".weather-box img");
       const temperature = document.querySelector(".weather-box .temperature");
       const description = document.querySelector(".weather-box .description");
@@ -51,7 +50,7 @@ search.addEventListener("click", () => {
         case "Clouds":
           image.src = "images/cloud.png";
           break;
-        case "Haze":
+        case "Mist":
           image.src = "images/mist.png";
           break;
         default:
