@@ -53,6 +53,6 @@ const api_url = `https://api.openweathermap.org/data/2.5/weather?q=${city_name}&
 ### 5. Open the HTML File:
 Open index.html in your browser, and the app will prompt you to enter a city name to see the weather data.
 ## Screenshot
-
+![Weather App UI](images/bg.png)
 ## Contributing
 If you'd like to contribute to this project, feel free to fork the repository, create a branch, and submit a pull request. Any contributions or suggestions are welcome!
