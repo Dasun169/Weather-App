@@ -10,6 +10,12 @@ search.addEventListener("click", () => {
 
   if (city === "") return;
 
+  error404.style.display = "none";
+  weatherBox.style.display = "none";
+  weatherDetails.style.display = "none";
+
+  container.style.height = "105px";
+
   fetch(
     `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKey}`
   )
@@ -53,6 +59,18 @@ search.addEventListener("click", () => {
         case "Mist":
           image.src = "images/mist.png";
           break;
+        case "Thunderstorm":
+          image.src = "images/thunderstorm.png";
+          break;
+        case "Drizzle":
+          image.src = "images/drizzle.png";
+          break;
+        case "Fog":
+          image.src = "images/fog.png";
+          break;
+        case "Haze":
+          image.src = "images/haze.png";
+          break;
         default:
           image.src = "";
       }
@@ -70,8 +88,10 @@ search.addEventListener("click", () => {
     })
     .catch((error) => {
       console.error("Error fetching weather data:", error.message);
-      alert(
-        "Failed to fetch weather data. Please check your API key or city name."
-      );
+      container.style.height = "400px";
+      weatherBox.style.display = "none";
+      weatherDetails.style.display = "none";
+      error404.style.display = "block";
+      error404.classList.add("fadeIn");
     });
 });
